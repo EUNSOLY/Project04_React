@@ -18,18 +18,18 @@ function MainBanner() {
             </label>
             <Link to="/input">편의시설 등록하기</Link>
           </div>
-          <div className="imgCon">
-            <img
-              src={`${process.env.PUBLIC_URL}/img/People.svg`}
-              alt="돋보기"
-              className="img1"
-            />
-            <img
-              src={`${process.env.PUBLIC_URL}/img/Peoples.svg`}
-              alt="돋보기"
-              className="img2"
-            />
-          </div>
+        </div>
+        <div className="imgCon">
+          <img
+            src={`${process.env.PUBLIC_URL}/img/People.svg`}
+            alt="돋보기"
+            className="img1"
+          />
+          <img
+            src={`${process.env.PUBLIC_URL}/img/Peoples.svg`}
+            alt="돋보기"
+            className="img2"
+          />
         </div>
       </div>
     </section>

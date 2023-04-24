@@ -1,4 +1,5 @@
 import MainBanner from "./MainBanner";
+
 function Main() {
   return (
     <section className="Main">

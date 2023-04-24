@@ -1,0 +1,141 @@
+@charset "utf-8";
+@font-face {
+  font-family: "KimjungchulGothic-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/KimjungchulGothic-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+:root {
+  font-size: 16px;
+  letter-spacing: -2px;
+  font-family: "DM Sans", sans-serif;
+  --gapBig: 4rem;
+  --gapSmall: 0.5rem;
+  --mx: 1440px;
+  --colorBlack: #555555;
+  --colorP1: #dde8ea;
+  --colorP2: #b5deda;
+  --colorP3: #8dccd3;
+  --colorP4: #3e89c2;
+  --colorP5: #e9dad3;
+  --colorP6: #f8efe8;
+}
+
+.mw {
+  width: calc(100% - var(--gapBig));
+  max-width: var(--mx);
+  margin: 0 auto;
+}
+/* common */
+section {
+  margin-bottom: 2rem;
+}
+img {
+  width: 100%;
+  display: block;
+}
+
+/* Header컨포넌트 */
+
+.Header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.Main {
+  border: 1px solid red;
+}
+.MainBanner {
+  position: relative;
+  background: linear-gradient(to bottom, #ffffff 70%, var(--colorP3) 30%);
+}
+.MainBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--colorP2);
+}
+.MainBanner .inner {
+  display: flex;
+  position: relative;
+  border: 2px solid dodgerblue;
+}
+
+.MainBanner .left {
+  background-color: var(--colorP2);
+  border-radius: 0 10px 10px 0;
+  padding: 2rem 0;
+  width: 65%;
+}
+.MainBanner .textCon {
+  color: #fff;
+  padding: 2rem 0;
+  position: relative;
+}
+.MainBanner .textCon h2 {
+  font-family: "KimjungchulGothic-Bold";
+  font-size: 3rem;
+}
+.MainBanner .textCon h2 span {
+  color: var(--colorP4);
+  border-bottom: 2px solid var(--colorP4);
+}
+.MainBanner .textCon p {
+  font-size: 1.5rem;
+  letter-spacing: -2.5px;
+  padding-top: 0.25rem;
+}
+.MainBanner .textCon label {
+  display: flex;
+  width: 80%;
+  background-color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: var(--gapSmall);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MainBanner .textCon label input {
+  width: 80%;
+  border: none;
+  outline: none;
+  color: var(--colorBlack);
+}
+.MainBanner .textCon label img {
+  width: 20px;
+}
+.MainBanner .textCon > a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--colorP3);
+  margin-top: 1rem;
+  box-shadow: 7px 5px 0px #7cb2ca;
+}
+.MainBanner .imgCon {
+  border: 1px solid red;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  right: 0;
+  width: 40%;
+  height: 100%;
+}
+.MainBanner .imgCon img {
+  width: 25%;
+}
+.MainBanner .imgCon .img1 {
+}
+.MainBanner .imgCon .img2 {
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+}

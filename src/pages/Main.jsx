@@ -1,9 +1,16 @@
-import MainBanner from "./MainBanner";
+import Map from "./Map";
+import Card from "./Card";
 
-function Main() {
+function Main({ modal, setModal }) {
   return (
     <section className="Main">
-      <MainBanner />
+      <Map />
+      <ul className="cardCon mw">
+        <Card modal={modal} setModal={setModal} />
+      </ul>
+      <div className="btnCon">
+        <button>더보기</button>
+      </div>
     </section>
   );
 }

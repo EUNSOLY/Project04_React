@@ -10,10 +10,11 @@
   font-size: 16px;
   letter-spacing: -2px;
   font-family: "DM Sans", sans-serif;
+  color: #363636;
   --gapBig: 4rem;
   --gapSmall: 0.5rem;
   --mx: 1440px;
-  --colorBlack: #555555;
+
   --colorP1: #dde8ea;
   --colorP2: #b5deda;
   --colorP3: #8dccd3;
@@ -34,6 +35,12 @@ section {
 img {
   width: 100%;
   display: block;
+}
+.on {
+  display: block;
+}
+.hidden {
+  display: none;
 }
 
 /* Header컨포넌트 */
@@ -80,6 +87,7 @@ img {
   font-family: "KimjungchulGothic-Bold";
   font-size: 2rem;
 }
+
 .MainBanner .textCon h2 span {
   color: var(--colorP4);
   border-bottom: 2px solid var(--colorP4);
@@ -89,7 +97,7 @@ img {
   letter-spacing: -2.5px;
   padding-top: 0.25rem;
 }
-.MainBanner .textCon label {
+.MainBanner .textCon label.on {
   display: flex;
   width: 80%;
   background-color: #fff;
@@ -101,6 +109,9 @@ img {
   align-items: center;
 }
 
+.MainBanner .textCon label.hidden {
+  display: none;
+}
 .MainBanner .textCon label input {
   width: 80%;
   border: none;
@@ -110,13 +121,16 @@ img {
 .MainBanner .textCon label img {
   width: 20px;
 }
-.MainBanner .textCon > a {
+.MainBanner .textCon > a.on {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: var(--colorP3);
   margin-top: 1rem;
   box-shadow: 7px 5px 0px #7cb2ca;
   font-size: 1rem;
+}
+.MainBanner .textCon > a.hidden {
+  display: none;
 }
 .MainBanner .imgCon {
   width: 40%;
@@ -138,6 +152,239 @@ img {
   right: 0;
   width: 50%;
 }
+
+/* Card */
+.cardCon {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardCon > li {
+  width: calc(100% / 3 - 0.5rem);
+  margin-right: 0.75rem;
+  margin-bottom: 1rem;
+  display: flex;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.cardCon > li:nth-of-type(3n) {
+  margin-right: 0;
+}
+.cardCon > li > button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+.cardCon .imgCon {
+  width: 30%;
+  padding-top: 30%;
+  position: relative;
+}
+.cardCon .imgCon img {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.cardCon .textCon {
+  padding: 0.75rem;
+}
+.cardCon .textCon > * {
+  padding: 0.25rem 0;
+}
+
+.cardCon .textCon .title {
+  font-weight: bold;
+}
+.cardCon .textCon .address,
+.cardCon .textCon .hours {
+  font-size: 0.75rem;
+  color: #7e7e7e;
+}
+.cardCon .textCon > div {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cardCon .textCon .hash p {
+  padding-right: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+}
+.btnCon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.btnCon button {
+  padding: 0.5rem 2rem;
+  border-radius: 1rem;
+  background-color: var(--colorP4);
+  color: #fff;
+  cursor: pointer;
+}
+/* Detail */
+.Detail {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #00000070;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modalCon {
+  width: 700px;
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.modalCon h2 {
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 95%;
+}
+.modalCon .btn {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  cursor: pointer;
+}
+.modalCon .btn span {
+  width: 100%;
+  height: 2px;
+  border-radius: 0.5rem;
+  background-color: var(--colorP3);
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+.modalCon .btn span:first-of-type {
+  transform: rotate(-45deg);
+}
+.modalCon .btn span:last-of-type {
+  transform: rotate(45deg);
+}
+.modalCon .contents {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.modalCon .contents > li {
+  width: calc(100% / 3 - 0.5rem);
+  margin-right: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.modalCon .contents > li:nth-of-type(3n) {
+  margin-right: 0;
+}
+.modalCon .title {
+  padding: 0.5rem 0;
+}
+
+/* Write */
+
+.Write .inputCon {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+}
+.Write h2 {
+  padding: 0 0 2rem;
+  font-size: 1.5rem;
+}
+.Write label {
+  display: flex;
+  margin-bottom: 1rem;
+}
+.Write label span {
+  padding: 0.5rem 2rem;
+  background-color: var(--colorP6);
+  box-shadow: 8px 8px 0px #e9dad3;
+}
+.Write input {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--colorP5);
+  margin-bottom: 1rem;
+}
+.Write .BD,
+.Write #BD,
+.Write .house,
+.Write #house {
+  width: 50%;
+}
+.Write #BD,
+.Write #house {
+  width: calc(100% / 2 - 0.5rem);
+}
+.Write #BD {
+  margin-right: 1rem;
+}
+.inputCon > div {
+  display: flex;
+  width: 100%;
+}
+.inputCon > div span {
+  padding: 0.5rem 2rem;
+  background-color: var(--colorP6);
+  box-shadow: 8px 8px 0px #e9dad3;
+}
+.checkCon {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.checkCon li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.75rem;
+  width: calc(100% / 5);
+}
+.checkCon li > label {
+  width: auto;
+}
+.checkCon li > input[type="checkbox"] {
+  width: 10%;
+}
+.checkCon li > input[type="file"] {
+  border-bottom: none;
+}
+.inputCon .btns {
+  padding: 1rem 0 2rem;
+  display: flex;
+}
+.inputCon .btns button,
+.inputCon .btns a {
+  border: none;
+  outline: none;
+  padding: 0.5rem 2rem;
+  background-color: var(--colorP6);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+.inputCon .btns button {
+  margin-right: 0.5rem;
+}
+/* Footer */
 
 .Footer {
   height: 90px;
@@ -165,20 +412,6 @@ img {
   border-top: 1px solid #fff;
   padding: 0.25rem 0;
 }
-/* 다현언니 */
-.mySwiper {
-  border: 1px solid red;
-  height: 500px;
-}
-.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal {
-  border: 5px solid dodgerblue;
-  top: 50%;
-  bottom: auto;
-  width: 200px;
-  right: -10px;
-  left: auto;
-  transform: rotate(90deg);
-}
 
 @media (max-width: 880px) {
   .MainBanner .left {
@@ -186,5 +419,45 @@ img {
   }
   .MainBanner .imgCon {
     display: none;
+  }
+}
+
+@media (max-width: 880px) {
+  .cardCon > li {
+    width: calc(100% / 2 - 0.5rem);
+    margin-right: 0.5rem;
+  }
+  .cardCon > li:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .cardCon > li:nth-of-type(3n) {
+    margin-right: 0.5rem;
+  }
+  .cardCon > li:nth-of-type(5n) {
+    margin-right: 0.5rem;
+  }
+  .cardCon .imgCon {
+    width: 50%;
+    padding-top: 50%;
+  }
+}
+@media (max-width: 630px) {
+  .cardCon > li {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  .cardCon > li:nth-of-type(2n) {
+    margin-right: 0;
+  }
+  .cardCon > li:nth-of-type(3n) {
+    margin-right: 0;
+  }
+  .cardCon > li:nth-of-type(5n) {
+    margin-right: 0;
+  }
+  .cardCon .imgCon {
+    width: 50%;
+    padding-top: 50%;
   }
 }

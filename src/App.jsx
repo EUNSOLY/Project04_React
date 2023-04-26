@@ -7,7 +7,7 @@ import "./css/App.css";
 import Header from "./pages/Header";
 import Main from "./pages/Main";
 import Write from "./pages/Write";
-import MainBanner from "./pages/MainBanner";
+
 import Footer from "./pages/Footer";
 function App() {
   let [modal, setModal] = useState(false);
@@ -16,7 +16,6 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <MainBanner urlName={urlName} />
       <Routes>
         <Route
           path="/"

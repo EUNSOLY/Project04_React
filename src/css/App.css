@@ -97,7 +97,7 @@ img {
   letter-spacing: -2.5px;
   padding-top: 0.25rem;
 }
-.MainBanner .textCon label.on {
+.MainBanner .textCon label {
   display: flex;
   width: 80%;
   background-color: #fff;
@@ -121,7 +121,7 @@ img {
 .MainBanner .textCon label img {
   width: 20px;
 }
-.MainBanner .textCon > a.on {
+.MainBanner .textCon > a {
   display: inline-block;
   padding: 0.5rem 1rem;
   background-color: var(--colorP3);

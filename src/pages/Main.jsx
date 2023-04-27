@@ -1,11 +1,10 @@
-import Map from "./Map";
 import Card from "./Card";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 const { kakao } = window;
 
-function Main({ modal, setModal }) {
+function Main({ modal, setModal, local, setLocal }) {
   // json데이터 Redux로 가져오기
   let data = useSelector((state) => state.data);
   // 좌표 useState
@@ -14,18 +13,20 @@ function Main({ modal, setModal }) {
   //  input 데이터
   let [inputData, setInputData] = useState("");
 
+  // 로컬스토리지 저장영역
+  // let [local, setLocal] = useState([]);
   // input 영역
   const input = document.querySelector(".inner .left label input");
   const handleChange = (e) => {
     setInputData(e.target.value);
   };
+
   const inputClose = () => {
-    input.value = "";
-  };
-  const inputAdd = () => {
-    setInputData(input.value);
+    // input.value = "";
+    setInputData("");
   };
 
+  // 카카오맵 api
   useEffect(() => {
     const doSomething = (x, y) => {
       setX(x);
@@ -37,7 +38,6 @@ function Main({ modal, setModal }) {
       doSomething(position.coords.latitude, position.coords.longitude);
     });
 
-    console.log("dd", inputData);
     // 카카오맵 생성
     const container = document.getElementById("map");
     const options = {
@@ -80,7 +80,7 @@ function Main({ modal, setModal }) {
         infowindow.close();
       });
     }
-  }, [x]);
+  }, [x.inputData]);
 
   return (
     <>
@@ -91,7 +91,7 @@ function Main({ modal, setModal }) {
               <h2>
                 내가 가고자하는 <span>주소만</span> 검색하면
               </h2>
-              <p>근처 장애인편의시설이 한번에? </p>z
+              <p>근처 장애인편의시설이 한번에? </p>
               <label>
                 <input
                   type="text"
@@ -102,8 +102,6 @@ function Main({ modal, setModal }) {
                 <button
                   type="submit"
                   onClick={() => {
-                    inputAdd();
-                    setInputData(input.value);
                     inputClose();
                   }}
                 >

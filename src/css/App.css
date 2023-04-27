@@ -116,7 +116,11 @@ img {
   width: 80%;
   border: none;
   outline: none;
-  color: var(--colorBlack);
+  color: #232323;
+}
+.MainBanner .textCon label button {
+  background-color: transparent;
+  cursor: pointer;
 }
 .MainBanner .textCon label img {
   width: 20px;

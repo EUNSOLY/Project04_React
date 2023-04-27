@@ -1,10 +1,10 @@
 import Card from "./Card";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 const { kakao } = window;
 
-function Main({ modal, setModal, local, setLocal }) {
+function Main({ local, setLocal }) {
   // json데이터 Redux로 가져오기
   let data = useSelector((state) => state.data);
   // 좌표 useState
@@ -13,18 +13,15 @@ function Main({ modal, setModal, local, setLocal }) {
   //  input 데이터
   let [inputData, setInputData] = useState("");
 
-  // 로컬스토리지 저장영역
-  // let [local, setLocal] = useState([]);
   // input 영역
-  const input = document.querySelector(".inner .left label input");
+  let inputRef = useRef(null); // input 참조
   const handleChange = (e) => {
     setInputData(e.target.value);
   };
+  const inputClose = (e) => {};
 
-  const inputClose = () => {
-    // input.value = "";
-    setInputData("");
-  };
+  // 필터링 영역
+  let [filterData, setFilterData] = useState([]);
 
   // 카카오맵 api
   useEffect(() => {
@@ -80,7 +77,7 @@ function Main({ modal, setModal, local, setLocal }) {
         infowindow.close();
       });
     }
-  }, [x.inputData]);
+  }, [x, y]);
 
   return (
     <>
@@ -98,6 +95,7 @@ function Main({ modal, setModal, local, setLocal }) {
                   placeholder="예 ) 대전광역시 서구 대덕대로 119"
                   value={inputData}
                   onChange={handleChange}
+                  ref={inputRef}
                 />
                 <button
                   type="submit"
@@ -135,9 +133,7 @@ function Main({ modal, setModal, local, setLocal }) {
         </div>
         <ul className="cardCon mw">
           {data.map((item, i) => {
-            return (
-              <Card key={i} modal={modal} setModal={setModal} item={item} />
-            );
+            return <Card key={i} item={item} i={i} />;
           })}
         </ul>
         <div className="btnCon">

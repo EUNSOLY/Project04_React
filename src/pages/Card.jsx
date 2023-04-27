@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Detail from "./Detail";
-function Card({ modal, setModal, item, children }) {
+function Card({ item, i }) {
   let [local, setLocal] = useState([]);
+  let [modal, setModal] = useState(false);
+
   // 로컬스토리지 디테일 페이지
   useEffect(() => {
     if (!localStorage.getItem("detail")) {
@@ -11,6 +13,7 @@ function Card({ modal, setModal, item, children }) {
       setLocal(detail);
     }
   }, []);
+
   return (
     <>
       <li

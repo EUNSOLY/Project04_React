@@ -51,9 +51,6 @@ img {
   align-items: center;
   margin-bottom: 2rem;
 }
-.Main {
-  border: 1px solid red;
-}
 .MainBanner {
   position: relative;
   background: linear-gradient(to bottom, #ffffff 70%, var(--colorP3) 30%);
@@ -299,6 +296,20 @@ img {
 }
 .modalCon .title {
   padding: 0.5rem 0;
+}
+.modalCon .contents > li > div {
+  padding-top: 80%;
+  overflow: hidden;
+  position: relative;
+}
+.modalCon .contents > li > div img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Write */

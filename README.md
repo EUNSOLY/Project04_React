@@ -81,10 +81,9 @@
 
 ---
 
-## 📌프로젝트관련 기획제안서 및 디자인 정리
+## 📌프로젝트관련 기획제안서 및 디자인 링크
 
-[피그마 아이디어](https://www.figma.com/file/lM2WAmN1Croj1Mgg4UJThD/%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0%3A1&t=yzIJcPWg2PjaKqRn-1)  
+[피그마 아이디어회의](https://www.figma.com/file/lM2WAmN1Croj1Mgg4UJThD/%EB%A6%AC%EC%95%A1%ED%8A%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8?node-id=0%3A1&t=yzIJcPWg2PjaKqRn-1)  
 [피그마 디자인](https://www.figma.com/file/J1inwVXzYw7V0ZCDz2yjuy/%EC%9D%B4%EC%9D%80%EC%86%94_ReactProjectDesign?node-id=0%3A1&t=35gWkl5JXaNy6meD-1)  
-<a href="">
-<img src="" alt="약식제안서">
-</a>
+[약식제안서](https://docs.google.com/presentation/d/1JiNj07hzN6ivzxfYDK2Apg6LLu6c_szPmdm4r_lOV0M/edit#slide=id.p)
+<img src="https://github.com/EUNSOLY/Project04_React/blob/master/public/gitImg/pptImg.PNG?raw=true" alt="약식제안서">

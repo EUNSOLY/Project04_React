@@ -25,12 +25,12 @@ function Main({ local, setLocal }) {
       : setInput([inputRef.current.value, ...input]);
     setAdd((add = input));
     inputRef.current.value = ""; // input 초기화
-    console.log(input);
+    // console.log(input);
   };
   if (typeof add === "object") {
     // console.log("object");
     add = add[0];
-    // console.log("add obj", add);
+    console.log("add obj", add);
   } else if (typeof add === "string") {
     // console.log("string이다");
   }
@@ -82,7 +82,6 @@ function Main({ local, setLocal }) {
     setZoomable(false);
 
     // 보이는 화면 내에 있는 마커 데이터 출력
-
     let markers = []; // 지도에 표시된 마커 객체를 가지고 있을 배열입니다
 
     // 데이터에 있는 배열들을 반복하면서 좌표값을 지도에 뿌려주기
@@ -150,26 +149,25 @@ function Main({ local, setLocal }) {
     );
   }, [add, x, y]);
 
-  // console.log("filterData", filterData);
-  console.log(!filterData);
+  console.log("filterData", filterData);
+  // console.log(!filterData);
   let datas = [];
   let [btnData, setBtnData] = useState([]);
   let [listData, setListData] = useState([]);
-  let [listCount, setListCount] = useState(3);
+  let [listCount, setListCount] = useState(0);
   useEffect(() => {
     if (!filterData) {
       return;
     } else {
       datas = filterData.slice(1);
+      // setBtnData([...datas].slice(listCount, listCount + 3));
       setBtnData([...datas]);
       setListData([...datas]);
+      console.log("데이터 3개", btnData);
       console.log("datas", datas);
+      // console.log("Btndata", btnData);
     }
   }, [filterData]);
-
-  // 버튼 강제 클릭으로 리스트 바로 출력시키기 ( 대신 검색했을 경우에만 가능하도록 검색 버튼 이용)
-  const buttonRef = useRef(null);
-  const buttonRef2 = useRef(null);
 
   return (
     <>
@@ -223,6 +221,56 @@ function Main({ local, setLocal }) {
         {/* map */}
         <div className="Map mw">
           <div id="map" style={{ width: "100%", height: "300px" }}></div>
+          <ul className="filCon">
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData);
+              }}
+            >
+              전체보기
+            </li>
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData.filter((a) => a.toilet === 1));
+              }}
+            >
+              장애인화장실
+            </li>
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData.filter((a) => a.elevator === 1));
+              }}
+            >
+              엘레베이터
+            </li>
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData.filter((a) => a.slope === 1));
+              }}
+            >
+              경사로
+            </li>
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData.filter((a) => a.automaticDoor === 1));
+              }}
+            >
+              자동문
+            </li>
+            <li
+              className="filter"
+              onClick={() => {
+                setBtnData(listData.filter((a) => a.braille === 1));
+              }}
+            >
+              점자
+            </li>
+          </ul>
         </div>
         <ul className="cardCon mw">
           {btnData.map((item, i) => {
@@ -230,7 +278,15 @@ function Main({ local, setLocal }) {
           })}
         </ul>
         <div className="btnCon">
-          <button>더보기</button>
+          <button
+            hidden
+            // onClick={() => {
+            //   console.log(listCount);
+            //   setListCount(listCount + 3);
+            // }}
+          >
+            더보기
+          </button>
         </div>
       </section>
     </>

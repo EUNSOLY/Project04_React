@@ -10,7 +10,7 @@ import { Provider } from "react-redux";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/Project04_React/">
       <Provider store={store}>
         <App />
       </Provider>
@@ -19,3 +19,4 @@ root.render(
 );
 
 reportWebVitals();
+// basename="/Project04_React/"

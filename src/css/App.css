@@ -136,7 +136,6 @@ img {
 .MainBanner .imgCon {
   width: 40%;
   position: relative;
-  /* background-size: contain; */
 }
 
 .MainBanner .imgCon img {
@@ -153,7 +152,49 @@ img {
   right: 0;
   width: 50%;
 }
+.Map {
+  position: relative;
+}
+/* 필터 */
+.filCon {
+  width: 90%;
+  position: absolute;
+  display: flex;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  font-size: 0.75rem;
+  margin: 0.5rem 1rem;
+  flex-wrap: wrap;
+}
 
+.filCon .filter {
+  position: relative;
+  background-color: var(--colorP1);
+  padding: 0.25rem 1.5rem;
+  cursor: pointer;
+  border: 1px solid var(--colorP3);
+  border-width: 1px 0 1px 0;
+}
+.filCon .filter:first-of-type {
+  border-width: 1px 0 1px 1px;
+}
+.filCon .filter:last-of-type {
+  border-width: 1px 1px 1px 0;
+}
+.filCon .filter::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 1px;
+  height: 50%;
+  transform: translate(0, -50%);
+  background-color: var(--colorP3);
+}
+.filCon .filter:last-of-type::before {
+  display: none;
+}
 /* Card */
 .cardCon {
   margin-top: 2rem;
@@ -231,7 +272,7 @@ img {
   color: #fff;
   cursor: pointer;
 }
-/* Detail */
+/* Detail(modal) */
 .Detail {
   position: fixed;
   width: 100%;

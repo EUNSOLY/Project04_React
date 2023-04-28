@@ -36,20 +36,20 @@
 
 ### 📌 사용 툴
 
-<img src="https://img.shields.io/badge/피그마-F24E1E?style=flatt&logo=Figma&logoColor=white"/>
-<img src="https://img.shields.io/badge/피그잼-purple?style=flatt&logo=Figma&logoColor=white"/> 
-<img src="https://img.shields.io/badge/AdobePhotoshop-31A8FF?style=flatt&logo=Adobe Photoshop&logoColor=white"/> 
-<img src="https://img.shields.io/badge/Adobelllustrator-FF9A00?style=flatt&logo=Adobe Illustrator&logoColor=white"/> 
-<img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flatt&logo=Visual Studio Code&logoColor=white"/>
+> <img src="https://img.shields.io/badge/피그마-F24E1E?style=flatt&logo=Figma&logoColor=white"/>
+> <img src="https://img.shields.io/badge/피그잼-purple?style=flatt&logo=Figma&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/AdobePhotoshop-31A8FF?style=flatt&logo=Adobe Photoshop&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/Adobelllustrator-FF9A00?style=flatt&logo=Adobe Illustrator&logoColor=white"/> 
+> <img src="https://img.shields.io/badge/Visual Studio Code-007ACC?style=flatt&logo=Visual Studio Code&logoColor=white"/>
 
 <br/>
 
 ### 📌 개발 언어
 
-<img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=react&logoColor=black"> 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/>
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white"/>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=black"/>
+> <img src="https://img.shields.io/badge/react-61DAFB?style=flat&logo=react&logoColor=black"> 
+> <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white"/>
+> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white"/>
+> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=black"/>
 
 <br/>
 
@@ -66,11 +66,21 @@
 1. JSON파일로 가상데이터 더미 생성 총 60개
 1. Redux로 데이터 바인딩 진행
 
-### 📌프로젝트 기획
-
-[기획회의]()
-[디자인]()
-
-> ##### 개발 이슈 및 부족한 점
+> ##### 개발 이슈
 >
-> 아아앙
+> 1. input에 입력된 데이터 데이터바인딩 미진행
+> 2. geolocation을 사용하는데 http 는 사용이 불가능하여 https 로 변환이 필요하여 진행
+
+[https 변경방법](https://velog.io/@horang-e/React-localhost-%ED%99%98%EA%B2%BD-HTTPS%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0Windows)  
+[Windows PowerShell로 choco설치](https://woogyun.tistory.com/720)
+
+> ##### 프로젝트 진행 시 느낀 부족한 점
+>
+> 1. input에 입력된 데이터 데이터바인딩
+> 2. 카카오맵 API에 대한 메소드응용
+
+---
+
+## 📌프로젝트관련 기획제안서 및 디자인 정리
+
+[Notion](https://www.notion.so/eunsoly/project04_React-9ec440ee9f414749b2a0fddf89f0fabe?pvs=4)

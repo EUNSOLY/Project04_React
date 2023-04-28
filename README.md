@@ -68,11 +68,12 @@
 
 > ##### 개발 이슈
 >
-> 1. input에 입력된 데이터 데이터바인딩 미진행
-> 2. geolocation을 사용하는데 http 는 사용이 불가능하여 https 로 변환이 필요하여 진행
+> 1. input에 입력된 데이터 데이터바인딩 진행 시 value값을 제대로 가지고 오지 않는 현상 발생
+> 2. geolocation을 사용하는데 http 는 사용이 불가능하여 https 로 변환이 필요하여 진행(완료)
 
-[https 변경방법](https://velog.io/@horang-e/React-localhost-%ED%99%98%EA%B2%BD-HTTPS%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0Windows)  
-[Windows PowerShell로 choco설치](https://woogyun.tistory.com/720)
+> geolocation관련 된 참고 사이트 (해당 사이트 보면서 해결완료)  
+> [https 변경방법](https://velog.io/@horang-e/React-localhost-%ED%99%98%EA%B2%BD-HTTPS%EB%A1%9C-%EB%B0%94%EA%BE%B8%EA%B8%B0Windows)  
+> [Windows PowerShell로 choco설치](https://woogyun.tistory.com/720)
 
 > ##### 프로젝트 진행 시 느낀 부족한 점
 >

@@ -30,7 +30,7 @@ function Main({ local, setLocal }) {
   if (typeof add === "object") {
     // console.log("object");
     add = add[0];
-    console.log("add obj", add);
+    // console.log("add obj", add);
   } else if (typeof add === "string") {
     // console.log("string이다");
   }
@@ -51,7 +51,7 @@ function Main({ local, setLocal }) {
         let geocoder = new kakao.maps.services.Geocoder();
         geocoder.addressSearch(add, function (result, status) {
           if (status === kakao.maps.services.Status.OK) {
-            console.log(result[0].y, result[0].x);
+            // console.log(result[0].y, result[0].x);
             doSomething(result[0].y, result[0].x);
           }
         });
@@ -72,6 +72,7 @@ function Main({ local, setLocal }) {
     const options = {
       center: new kakao.maps.LatLng(x, y), //지도의 중심좌표.
       level: 3, //지도의 레벨(확대, 축소 정도)
+      disableZoom: true, // zoom 막는 코드
     };
     const map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
@@ -118,8 +119,8 @@ function Main({ local, setLocal }) {
         });
       }
     }
-
     showTextMarkers();
+
     // 보이는 화면에 맞는 데이터 출력
     kakao.maps.event.addListener(
       map,
@@ -149,12 +150,14 @@ function Main({ local, setLocal }) {
     );
   }, [add, x, y]);
 
-  console.log("filterData", filterData);
-  // console.log(!filterData);
+  // console.log("filterData", filterData);
+
   let datas = [];
   let [btnData, setBtnData] = useState([]);
   let [listData, setListData] = useState([]);
-  let [listCount, setListCount] = useState(0);
+  let [listCount, setListCount] = useState(3);
+  let [countList, setCountList] = useState([]);
+
   useEffect(() => {
     if (!filterData) {
       return;
@@ -163,11 +166,18 @@ function Main({ local, setLocal }) {
       // setBtnData([...datas].slice(listCount, listCount + 3));
       setBtnData([...datas]);
       setListData([...datas]);
-      console.log("데이터 3개", btnData);
+      setCountList([...datas.slice(0, 3)]);
+      setListCount(0);
+      console.log("btnData", btnData);
       console.log("datas", datas);
-      // console.log("Btndata", btnData);
+      console.log("listData", listData);
     }
   }, [filterData]);
+
+  useEffect(() => {
+    console.log("btnData", btnData);
+    setCountList([...countList, ...btnData.slice(listCount, listCount + 3)]);
+  }, [listCount]);
 
   return (
     <>
@@ -273,20 +283,22 @@ function Main({ local, setLocal }) {
           </ul>
         </div>
         <ul className="cardCon mw">
-          {btnData.map((item, i) => {
+          {countList.map((item, i) => {
             return <Card key={i} item={item} i={i} />;
           })}
         </ul>
         <div className="btnCon">
-          <button
-            hidden
-            // onClick={() => {
-            //   console.log(listCount);
-            //   setListCount(listCount + 3);
-            // }}
-          >
-            더보기
-          </button>
+          {countList.length < 3 ? null : (
+            <button
+              // hidden
+              onClick={() => {
+                setListCount(listCount + 3);
+                // console.log("list, listCount", listData, listCount);
+              }}
+            >
+              더보기
+            </button>
+          )}
         </div>
       </section>
     </>

@@ -210,7 +210,7 @@ function Main({ local, setLocal }) {
                   />
                 </button>
               </label>
-              <Link to="/write">편의시설 등록하기</Link>
+              <Link to="javascript:void(0)">편의시설 등록하기</Link>
             </div>
           </div>
           <div className="imgCon">
